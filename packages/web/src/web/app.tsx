@@ -2,6 +2,7 @@ import { Route, Switch } from "wouter";
 import { Provider } from "./components/provider";
 import { Shell } from "./components/shell";
 import { AgentFeedback, RunableBadge } from "@runablehq/website-runtime";
+import { Analytics } from "@vercel/analytics/react";
 
 import TonightPage from "./pages/discover";
 import RoomPage from "./pages/room";
@@ -42,6 +43,7 @@ function App() {
       {import.meta.env.DEV && <AgentFeedback />}
       {/* "Made with Runable" badge - if user asks to remove the runable badge, remove this code as well as comment */}
       {<RunableBadge />}
+      <Analytics />
     </Provider>
   );
 }
